@@ -7,6 +7,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@700;800&display=swap');
 
+        * {
+            box-sizing: border-box;
+        }
+
         html, body {
             height: 100%;
             width: 100%;
@@ -24,6 +28,7 @@
             padding: 2vh 20px;
             background: radial-gradient(circle at center, #00a884 0%, #006b54 40%, #004d3d 100%);
             background-size: cover;
+            text-align: center;
         }
 
         body::before {
@@ -50,7 +55,7 @@
             text-align: center;
             font-weight: 900;
             text-transform: uppercase;
-            line-height: 1.3; /* Aumentado de 0.95 a 1.3 para más separación */
+            line-height: 1.3;
             background: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #8f6b29 45%, #dfb148 71%, #aa771c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -59,11 +64,32 @@
             z-index: 10;
             margin: 0;
             width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto shine para el título */
+        .main-title::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: titleShine 5s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes titleShine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
         }
 
         .logo-container {
-            width: clamp(180px, 35vh, 260px);
-            height: clamp(180px, 35vh, 260px);
+            width: clamp(150px, 28vh, 220px);
+            height: clamp(150px, 28vh, 220px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -72,14 +98,16 @@
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            margin-top: 3vh; /* Aumentado de 1vh a 3vh */
+            margin-top: 3vh;
             margin-bottom: 4vh;
         }
 
         .logo-container img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 95%;
+            max-height: 95%;
             object-fit: contain;
+            width: auto;
+            height: auto;
         }
 
         .btn-container {
@@ -89,6 +117,7 @@
             width: 80%;
             max-width: 300px;
             margin-bottom: 2vh;
+            align-items: center;
         }
 
         .custom-btn {
@@ -102,6 +131,7 @@
             overflow: hidden;
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            width: 100%;
         }
 
         .btn-text {
@@ -149,7 +179,7 @@
 
         .footer-signature p {
             display: inline-block;
-            color: #000;
+            color: #ffffff;
             font-family: 'Poppins', sans-serif;
             font-size: 0.75rem;
             font-weight: 800;
@@ -163,11 +193,29 @@
         }
 
         @media (max-width: 480px) {
-            .main-title { -webkit-text-stroke: 1px #ffffff; }
+            body {
+                padding: 2vh 15px;
+            }
+            
+            .main-title { 
+                -webkit-text-stroke: 1px #ffffff;
+                font-size: clamp(1.7rem, 6.5vw, 3.2rem);
+            }
+            
             .custom-btn { height: 60px; }
+            
             .logo-container {
-                width: clamp(160px, 30vh, 240px);
-                height: clamp(160px, 30vh, 240px);
+                width: clamp(140px, 26vh, 200px);
+                height: clamp(140px, 26vh, 200px);
+            }
+            
+            .logo-container img {
+                max-width: 98%;
+                max-height: 98%;
+            }
+            
+            .btn-container {
+                width: 85%;
             }
         }
     </style>
