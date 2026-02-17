@@ -13,16 +13,16 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Evita el scroll infinito */
-            position: fixed; /* Mantiene la interfaz anclada */
+            overflow: hidden;
+            position: fixed;
         }
 
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between; /* Distribuye elementos proporcionalmente */
-            padding: 5vh 20px;
+            justify-content: flex-start;
+            padding: 2vh 20px;
             background: radial-gradient(circle at center, #00a884 0%, #006b54 40%, #004d3d 100%);
             background-size: cover;
         }
@@ -49,7 +49,7 @@
         /* 2. TÍTULO: REDUCIDO 2PX Y BORDE BLANCO */
         .main-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.07rem, 7.5vw, 3.87rem); /* Tamaño reducido aprox 2px */
+            font-size: clamp(1.87rem, 7vw, 3.67rem); /* Tamaño reducido 2px */
             text-align: center;
             font-weight: 900;
             text-transform: uppercase;
@@ -57,16 +57,17 @@
             background: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #8f6b29 45%, #dfb148 71%, #aa771c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* CAMBIO A BORDE BLANCO */
-            -webkit-text-stroke: 1.5px #ffffff; 
+            -webkit-text-stroke: 1.5px #ffffff;
             filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5));
             z-index: 10;
+            margin: 0;
+            width: 100%;
         }
 
-        /* 3. CONTENEDOR DEL LOGO ADAPTATIVO */
+        /* 3. CONTENEDOR DEL LOGO ADAPTATIVO - REDUCIDO Y SUBIDO */
         .logo-container {
-            width: clamp(220px, 50vh, 320px);
-            height: clamp(220px, 50vh, 320px);
+            width: clamp(180px, 35vh, 260px); /* Reducido ancho */
+            height: clamp(180px, 35vh, 260px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -75,6 +76,8 @@
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            margin-top: 1vh; /* Subido hacia arriba */
+            margin-bottom: 4vh; /* Separación con botones */
         }
 
         .logo-container img {
@@ -87,7 +90,7 @@
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 4vh; /* Separación basada en la altura de pantalla */
+            gap: 3vh; /* Separación entre botones */
             width: 80%;
             max-width: 300px;
             margin-bottom: 2vh;
@@ -150,6 +153,7 @@
             overflow: hidden;
             white-space: nowrap;
             padding-bottom: 5px;
+            margin-top: auto; /* Empujar hacia abajo */
         }
 
         .footer-signature p {
@@ -171,6 +175,10 @@
         @media (max-width: 480px) {
             .main-title { -webkit-text-stroke: 1px #ffffff; }
             .custom-btn { height: 60px; }
+            .logo-container {
+                width: clamp(160px, 30vh, 240px);
+                height: clamp(160px, 30vh, 240px);
+            }
         }
     </style>
 </head>
@@ -179,7 +187,7 @@
     <h1 class="main-title">SÚPER ECOSISTEMA<br>LEÓN GTO</h1>
 
     <div class="logo-container">
-        <img src="ECOSISTEMALEONGTO.png" alt="Logo León">
+        <img src="ECOSISTEMALEONGTO.PNG" alt="Logo León">
     </div>
 
     <div class="btn-container">
