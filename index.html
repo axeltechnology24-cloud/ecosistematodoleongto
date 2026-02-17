@@ -7,7 +7,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@700;800&display=swap');
 
-        /* 1. CONFIGURACIÓN DE PÁGINA FIJA (SIN SCROLL) */
         html, body {
             height: 100%;
             width: 100%;
@@ -27,7 +26,6 @@
             background-size: cover;
         }
 
-        /* Efecto de luz ambiental fija */
         body::before {
             content: "";
             position: absolute;
@@ -46,14 +44,13 @@
             100% { left: 250%; }
         }
 
-        /* 2. TÍTULO: REDUCIDO 2PX Y BORDE BLANCO */
         .main-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.87rem, 7vw, 3.67rem); /* Tamaño reducido 2px */
+            font-size: clamp(1.87rem, 7vw, 3.67rem);
             text-align: center;
             font-weight: 900;
             text-transform: uppercase;
-            line-height: 0.95;
+            line-height: 1.3; /* Aumentado de 0.95 a 1.3 para más separación */
             background: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #8f6b29 45%, #dfb148 71%, #aa771c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -64,9 +61,8 @@
             width: 100%;
         }
 
-        /* 3. CONTENEDOR DEL LOGO ADAPTATIVO - REDUCIDO Y SUBIDO */
         .logo-container {
-            width: clamp(180px, 35vh, 260px); /* Reducido ancho */
+            width: clamp(180px, 35vh, 260px);
             height: clamp(180px, 35vh, 260px);
             display: flex;
             justify-content: center;
@@ -76,8 +72,8 @@
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            margin-top: 1vh; /* Subido hacia arriba */
-            margin-bottom: 4vh; /* Separación con botones */
+            margin-top: 3vh; /* Aumentado de 1vh a 3vh */
+            margin-bottom: 4vh;
         }
 
         .logo-container img {
@@ -86,11 +82,10 @@
             object-fit: contain;
         }
 
-        /* 4. BOTONES METÁLICOS SEPARADOS Y MÁS CORTOS */
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 3vh; /* Separación entre botones */
+            gap: 3vh;
             width: 80%;
             max-width: 300px;
             margin-bottom: 2vh;
@@ -118,7 +113,6 @@
             z-index: 2;
         }
 
-        /* Efecto luz en botones */
         .custom-btn::after {
             content: "";
             position: absolute;
@@ -138,22 +132,19 @@
 
         .custom-btn:active { transform: scale(0.98); }
 
-        /* DEGRADADOS REQUERIDOS */
         .btn-black { background: linear-gradient(145deg, #2c2c2c, #000000); }
         .btn-black .btn-text { color: #dfb148; }
 
         .btn-gold { background: linear-gradient(145deg, #fcf6ba, #bf953f); }
 
-        /* TERCER BOTÓN: VERDE ESMERALDA CON DEGRADADO */
         .btn-emerald { background: linear-gradient(145deg, #00ffcc, #006b54); }
 
-        /* 5. FIRMA EN NEGRO */
         .footer-signature {
             width: 100%;
             overflow: hidden;
             white-space: nowrap;
             padding-bottom: 5px;
-            margin-top: auto; /* Empujar hacia abajo */
+            margin-top: auto;
         }
 
         .footer-signature p {
@@ -171,7 +162,6 @@
             100% { transform: translateX(-100%); }
         }
 
-        /* Ajustes Mobile Android */
         @media (max-width: 480px) {
             .main-title { -webkit-text-stroke: 1px #ffffff; }
             .custom-btn { height: 60px; }
@@ -187,7 +177,7 @@
     <h1 class="main-title">SÚPER ECOSISTEMA<br>LEÓN GTO</h1>
 
     <div class="logo-container">
-        <img src="ECOSISTEMALEONGTO.PNG" alt="Logo León">
+        <img src="ECOSISTEMALEONGTO.png" alt="Logo León">
     </div>
 
     <div class="btn-container">
