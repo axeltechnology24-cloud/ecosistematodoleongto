@@ -87,8 +87,10 @@
         .logo-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center top;
+            object-fit: cover !important;
+            object-position: center center;
+            min-width: 100%;
+            min-height: 100%;
         }
 
         /* Efecto shine sobre la imagen del león */
@@ -114,7 +116,6 @@
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 2.5vh;
             width: 80%;
             max-width: 300px;
             margin: 0 auto 2vh auto;
@@ -133,8 +134,12 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             width: 100%;
-            margin: 0;
+            margin: 0 0 2.5vh 0;
             padding: 0;
+        }
+
+        .custom-btn:last-child {
+            margin-bottom: 0;
         }
 
         .btn-text {
@@ -216,13 +221,9 @@
                 margin: 0 auto 5vh auto;
             }
             
-            .btn-container {
-                gap: 3vh;
-                max-width: 350px;
-            }
-            
             .custom-btn {
                 height: 70px;
+                margin: 0 0 3vh 0;
             }
         }
 
@@ -244,13 +245,9 @@
                 margin: 0 auto 3.5vh auto;
             }
             
-            .btn-container {
-                width: 85%;
-                gap: 2.5vh;
-            }
-            
             .custom-btn { 
                 height: clamp(55px, 7.5vh, 65px);
+                margin: 0 0 2.5vh 0;
             }
             
             .btn-text {
@@ -268,15 +265,15 @@
     </div>
 
     <div class="btn-container">
-        <a href="URL_1" class="custom-btn btn-black">
+        <a href="https://compualextech24.github.io/empleosdeleongtoaxel/" class="custom-btn btn-black">
             <span class="btn-text">UBICANEGOLEON</span>
         </a>
 
-        <a href="URL_2" class="custom-btn btn-gold">
+        <a href="https://flavioalejandrov24-lang.github.io/ubicanegociosleongto/" class="custom-btn btn-gold">
             <span class="btn-text">JOBPUB LEON</span>
         </a>
 
-        <a href="URL_3" class="custom-btn btn-emerald">
+        <a href="#" class="custom-btn btn-emerald">
             <span class="btn-text">GRUPOSL WHATS</span>
         </a>
     </div>
